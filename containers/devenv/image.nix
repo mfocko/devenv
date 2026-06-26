@@ -57,7 +57,10 @@ import ./docker.nix {
   };
 
   # Add devenv
-  extraPkgs = [ devenv ];
+  extraPkgs = [
+    pkgs.bashInteractive
+    devenv
+  ];
 
   # Don't bundle Nix to reduce the image size
   bundleNixpkgs = false;
